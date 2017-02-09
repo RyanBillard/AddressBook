@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="mainFrame" class="addressbook.MyFrame" init-method="init">
+        <property name="title">
+            <value>Address Book</value>
+        </property>
+        <property name="contentPane"><ref bean="mainPanel"/></property>
+    </bean>
+    <bean id="mainPanel" class="addressbook.MyPanel" init-method="init">
+        <property name="axis"><value>1</value></property>
+        <property name="panelComponents">
+            <list>
+                <ref bean="textField1"/>
+                <ref bean="textField2"/>
+                <ref bean="buttonPanel"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="buttonPanel" class="addressbook.MyPanel" init-method="init">
+        <property name="axis"><value>0</value></property>
+        <property name="panelComponents">
+            <list>
+                <ref bean="button1"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="textField1" class="addressbook.MyTextField" init-method="init"/>
+    <bean id="textField2" class="addressbook.MyTextField" init-method="init"/>
+    <bean id="button1" class="addressbook.MyButton" init-method="init">
+        <property name="actionListener">
+            <ref bean="myButtonActionListener"/>
+        </property>
+        <property name="text">
+            <value>Create</value>
+        </property>
+    </bean>
+    <bean id="myButtonActionListener" class="addressbook.MyActionListener">
+        <property name="nameField">
+            <ref bean="textField1"/>
+        </property>
+        <property name="numberField">
+            <ref bean="textField2"/>
+        </property>
+    </bean>
+</beans>
