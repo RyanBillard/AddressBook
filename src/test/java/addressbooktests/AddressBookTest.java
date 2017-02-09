@@ -1,3 +1,5 @@
+package addressbooktests;
+
 import addressbook.AddressBook;
 import addressbook.BuddyInfo;
 import junit.framework.TestCase;

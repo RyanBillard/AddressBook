@@ -1,3 +1,5 @@
+package addressbooktests;
+
 import addressbook.AddressBook;
 import addressbook.Application;
 import addressbook.BuddyInfo;
