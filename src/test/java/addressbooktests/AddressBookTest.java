@@ -23,7 +23,6 @@ public class AddressBookTest extends TestCase {
         assertEquals("", ab.toString());
         ab.addBuddy(buddy);
         assertEquals("Ryan6132221111", ab.toString());
-
     }
 
 //    public void testPersistAddressBook() {
